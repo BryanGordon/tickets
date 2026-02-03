@@ -2,6 +2,9 @@ html {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+
+  background-color: #121010e2;
+  color: whitesmoke;
 }
 
 body {
@@ -9,4 +12,12 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100dvh;
+}
+
+body {
+  margin: 0;
+}
+
+footer {
+  margin-top: auto;
 }
