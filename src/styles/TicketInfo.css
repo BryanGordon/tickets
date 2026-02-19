@@ -1,0 +1,13 @@
+.data-format {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  width: 60%;
+  margin-inline: auto;
+  place-content: center;
+}
+
+h3 {
+  text-align: center;
+}
