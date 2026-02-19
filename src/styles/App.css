@@ -2,3 +2,13 @@ h1 {
   text-align: center;
   font-size: 48px;
 }
+
+h2 {
+  text-align: center;
+}
+
+.container-tickets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
