@@ -1,5 +1,7 @@
 // import { useState } from 'react'
 import Footer from './components/Footer'
+import { TicketInfo } from './components/TicketInfo'
+import { TicketList } from './components/TicketList'
 import './styles/App.css'
 
 function App() {
@@ -19,8 +21,12 @@ function App() {
           Choose one kind of ticket
         </h2>
         
+        <div className='container-tickets'>
+          <TicketList />
+        </div>
       </div>
     </article>
+    <TicketInfo />
     <Footer />
     </>
   )
