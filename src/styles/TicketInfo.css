@@ -11,3 +11,25 @@
 h3 {
   text-align: center;
 }
+
+ul {
+  display: flex;
+  gap: 25px;
+  margin-block: 35px;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+
+  & button {
+    color: whitesmoke;
+    background-color: darkviolet;
+  }
+}
+
+.container-tickets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
