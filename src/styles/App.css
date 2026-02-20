@@ -6,9 +6,3 @@ h1 {
 h2 {
   text-align: center;
 }
-
-.container-tickets {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
