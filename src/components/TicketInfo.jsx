@@ -20,6 +20,22 @@ export function TicketInfo () {
   }
   
   return (
+    <>
+    <section>
+      <article className='container-tickets'>
+      <ul>
+      <li>
+        <button>Concert</button>
+      </li>
+      <li>
+        <button>Movies</button>
+      </li>
+      <li>
+        <button>Trains</button>
+      </li>
+    </ul>
+    </article>
+    </section>
     <section>
       <article>
         <h3>Ticket information</h3>
