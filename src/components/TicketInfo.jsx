@@ -1,6 +1,24 @@
 import "../styles/TicketInfo.css"
 
 export function TicketInfo () {
+  const GenerateConcertTicket = (e) => {
+    e.preventDefault()
+
+    return null
+  }
+
+  const GenerateMoviesTicket = (e) => {
+    e.preventDefault()
+
+    return null
+  }
+
+  const GenerateTrainTicket = (e) => {
+    e.preventDefault()
+
+    return null
+  }
+  
   return (
     <section>
       <article>
@@ -15,5 +33,6 @@ export function TicketInfo () {
         </div>
       </article>
     </section>
+    </>
   )
 }
