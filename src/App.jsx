@@ -20,10 +20,11 @@ function App() {
         <h2>
           Choose one kind of ticket
         </h2>
-        
+        {/*
         <div className='container-tickets'>
           <TicketList />
         </div>
+        */}
       </div>
     </article>
     <TicketInfo />
