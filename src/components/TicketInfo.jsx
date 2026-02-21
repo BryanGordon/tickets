@@ -1,22 +1,27 @@
+import { useState } from 'react'
 import "../styles/TicketInfo.css"
 
 export function TicketInfo () {
-  const GenerateConcertTicket = (e) => {
-    e.preventDefault()
+  const [ticketData, SetTicketData] = useState("")
 
-    return null
+  const GenerateConcertTicket = async () => {
+    const newTicket = await fetch("http://localhost:3000/concert-tickets", {
+      method: "POST",
+    })
+    .then(res => res.json())
+    console.log(newTicket)
+    SetTicketData(newTicket)
+    // return console.log("Concert ticket")
   }
 
-  const GenerateMoviesTicket = (e) => {
-    e.preventDefault()
+  const GenerateMoviesTicket = () => {
 
-    return null
+    return console.log("Movie ticket")
   }
 
-  const GenerateTrainTicket = (e) => {
-    e.preventDefault()
+  const GenerateTrainTicket = () => {
 
-    return null
+    return console.log("Train ticket")
   }
   
   return (
@@ -25,13 +30,13 @@ export function TicketInfo () {
       <article className='container-tickets'>
       <ul>
       <li>
-        <button>Concert</button>
+        <button onClick={GenerateConcertTicket}>Concert</button>
       </li>
       <li>
-        <button>Movies</button>
+        <button onClick={GenerateMoviesTicket}>Movies</button>
       </li>
       <li>
-        <button>Trains</button>
+        <button onClick={GenerateTrainTicket}>Trains</button>
       </li>
     </ul>
     </article>
@@ -41,7 +46,7 @@ export function TicketInfo () {
         <h3>Ticket information</h3>
         <div className='data-format'>
           <strong>Type:</strong>
-          <span>Concert</span>
+          <span>{ticketData.number}</span>
         </div>
         <div className='data-format'>
           <strong>Number:</strong>
