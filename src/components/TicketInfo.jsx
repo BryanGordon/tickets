@@ -11,17 +11,24 @@ export function TicketInfo () {
     .then(res => res.json())
     console.log(newTicket)
     SetTicketData(newTicket)
-    // return console.log("Concert ticket")
   }
 
-  const GenerateMoviesTicket = () => {
+  const GenerateMoviesTicket = async () => {
+    const newTicket = await fetch('http://localhost:3000/movies-tickets', {
+      method: "POST",
+    })
+    .then(res => res.json())
 
-    return console.log("Movie ticket")
+    SetTicketData(newTicket)
   }
 
-  const GenerateTrainTicket = () => {
+  const GenerateTrainTicket = async () => {
+    const newTicket = await fetch("http://localhost:3000/train-tickets", {
+      method: "POST"
+    })
+    .then(res => res.json())
 
-    return console.log("Train ticket")
+    SetTicketData(newTicket)
   }
   
   return (
@@ -46,11 +53,11 @@ export function TicketInfo () {
         <h3>Ticket information</h3>
         <div className='data-format'>
           <strong>Type:</strong>
-          <span>{ticketData.number}</span>
+          <span>{ticketData.type}</span>
         </div>
         <div className='data-format'>
           <strong>Number:</strong>
-          <span>42432423432</span>
+          <span>{ticketData.number}</span>
         </div>
       </article>
     </section>
