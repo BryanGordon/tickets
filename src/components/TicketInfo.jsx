@@ -49,11 +49,14 @@ export function TicketInfo () {
     </article>
     </section>
     <section>
-      <article>
+      <article className='ticket-card'>
         <h3>Ticket information</h3>
         <div className='data-format'>
           <strong>Type:</strong>
-          <span>{ticketData.type}</span>
+          <span>{ticketData.type} ticket</span>
+        </div>
+        <div className='img-container'>
+          <img src="" alt="ticket image" />
         </div>
         <div className='data-format'>
           <strong>Number:</strong>
