@@ -7,6 +7,7 @@ import './styles/App.css'
 function App() {
   return (
     <>
+    <main>
     <header>
       <h1>
         Ticket Generator
@@ -28,6 +29,7 @@ function App() {
       </div>
     </article>
     <TicketInfo />
+    </main>
     <Footer />
     </>
   )
