@@ -28,6 +28,19 @@
   margin-inline: auto;
 }
 
+.list-tickets-link {
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  text-align: center;
+
+  & a {
+    text-decoration: none;
+    color: whitesmoke;
+  }
+  
+}
+
 h3 {
   text-align: center;
 }
@@ -45,6 +58,10 @@ li {
   & button {
     color: whitesmoke;
     background-color: darkviolet;
+    border-radius: 6px;
+    padding: 12px 17px;
+    border: none;
+    cursor: pointer;
   }
 }
 
