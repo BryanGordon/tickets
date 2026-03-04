@@ -1,5 +1,8 @@
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
 import { useState } from 'react'
 import "../styles/TicketInfo.css"
+import { NavLink } from 'react-router-dom'
 
 export function TicketInfo () {
   const [ticketData, SetTicketData] = useState("")
@@ -48,7 +51,7 @@ export function TicketInfo () {
     </ul>
     </article>
     <div className='list-tickets-link'>
-      <a href="#">See all ticket list</a>
+      <NavLink to='/tickets-list'>See all tickets.</NavLink>
     </div>
     </section>
     <section>
