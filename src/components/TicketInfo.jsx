@@ -47,12 +47,14 @@ export function TicketInfo () {
       </li>
     </ul>
     </article>
+    <div className='list-tickets-link'>
+      <a href="#">See all ticket list</a>
+    </div>
     </section>
     <section>
       <article className='ticket-card'>
         <h3>Ticket information</h3>
         <div className='data-format'>
-          <strong>Type:</strong>
           <span>{ticketData.type} ticket</span>
         </div>
         <div className='img-container'>
