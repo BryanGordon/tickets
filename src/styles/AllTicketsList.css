@@ -1,9 +1,13 @@
 .ticket-data-card {
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  align-items: center;
+  padding: 20px;
   margin-block: 16px;
   border-radius: 9px;
   background-color: darkorchid;
-  box-shadow: 0px 10px 6px 1px #0000;
+  box-shadow: 0px 7px 6px 1px #000;
 }
 
 .back-container {
@@ -15,9 +19,14 @@
   }
 }
 
+.info-container {
+  display: flex;
+  gap: 20px;
+}
+
 .validated {
-  padding: 6px;
-  border-radius: 12px;
+  padding: 6px 14px;
+  border-radius: 18px;
   background-color: skyblue;
   color: black;
 }
