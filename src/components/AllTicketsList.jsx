@@ -11,21 +11,33 @@ export function AllTicketsList () {
       </header>
       <article>
         <div className='ticket-data-card'>
-          <span>Ticket type: Train</span>
-          <span>Number: 313132</span>
-          <span className='validated'>Validated</span>
+          <div className='info-container'>
+            <span>Ticket type: Train</span>
+            <span>Number: 313132</span>
+          </div>
+          <div>
+            <span className='validated'>Validated</span>  
+          </div>
         </div>
 
         <div className='ticket-data-card'>
-          <span>Ticket type: Train</span>
-          <span>Number: 313132</span>
-          <span className='validated'>Validated</span>
+          <div className='info-container'>
+            <span>Ticket type: Train</span>
+            <span>Number: 313132</span>
+          </div>
+          <div>
+            <span className='validated'>Validated</span>
+          </div>
         </div>
 
         <div className='ticket-data-card'>
-          <span>Ticket type: Train</span>
-          <span>Number: 313132</span>
-          <span className='validated'>Validated</span>
+          <div className='info-container'>
+            <span>Ticket type: Train</span>
+            <span>Number: 313132</span>
+          </div>
+          <div>
+            <span className='validated'>Validated</span>
+          </div>
         </div>
       </article>
     </section>
