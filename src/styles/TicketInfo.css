@@ -1,5 +1,5 @@
 .ticket-card {
-  background-color: darkgrey;
+  background-color: #363333;
   padding: 35px;
   border-radius: 12px;
   margin-bottom: 65px;
@@ -24,7 +24,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 20px;
+  margin-top: 35px;
   width: 60%;
   margin-inline: auto;
 
@@ -46,8 +46,16 @@
   
 }
 
+.container-tickets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 h3 {
   text-align: center;
+  font-size: 28px;
+  margin-top: 12px;
 }
 
 ul {
@@ -70,10 +78,7 @@ li {
   }
 }
 
-.container-tickets {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
 strong {
   font-size: 20px;
 }
+
