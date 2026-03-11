@@ -4,7 +4,7 @@
   gap: 35px;
   align-items: center;
   padding: 20px;
-  margin-block: 16px;
+  margin-block: 25px;
   border-radius: 9px;
   background-color: darkorchid;
   box-shadow: 0px 7px 6px 1px #000;
@@ -22,10 +22,16 @@
 .info-container {
   display: flex;
   gap: 20px;
+
+  & span {
+    font-size: 19px;
+    font-weight: 600;
+    color: black;
+  }
 }
 
 .validated {
-  padding: 6px 14px;
+  padding: 7px 16px;
   border-radius: 18px;
   background-color: skyblue;
   color: black;
