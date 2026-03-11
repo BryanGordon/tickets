@@ -35,13 +35,21 @@
 
 .list-tickets-link {
   width: 50%;
+  height: 26px;
   margin: 0 auto;
   margin-bottom: 50px;
   text-align: center;
 
+  & a:hover {
+    color: lightpink;
+    font-size: 15px;
+  }
+
   & a {
     text-decoration: none;
     color: whitesmoke;
+    font-size: 17px;
+    transition: all ease-in-out 0.3s;
   }
   
 }
