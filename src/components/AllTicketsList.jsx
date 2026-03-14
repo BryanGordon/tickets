@@ -1,8 +1,17 @@
 import { NavLink } from 'react-router-dom'
 import '../styles/AllTicketsList.css'
+import { NoItemsList } from './NoItemsList'
 
 export function AllTicketsList () {
   return (
+    <>
+    <header>
+      <div className='back-container'>
+        <NavLink to='/'>Go back</NavLink>
+      </div>
+      </header>
+    <NoItemsList />
+    {/**
     <section>
       <header>
       <div className='back-container'>
@@ -41,5 +50,7 @@ export function AllTicketsList () {
         </div>
       </article>
     </section>
+    */}
+    </>
   )
 }
