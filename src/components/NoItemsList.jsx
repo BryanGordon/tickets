@@ -1,7 +1,9 @@
 export function NoItemsList () {
   return (
-    <>
-    <h1>No items listed</h1>
-    </>
+    <section className='conditional-section'>
+      <article className='invalid-data'>
+        <h4>No exist created tickets.</h4>
+      </article>
+    </section>
   )
 }
