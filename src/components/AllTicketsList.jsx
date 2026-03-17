@@ -3,7 +3,10 @@ import '../styles/AllTicketsList.css'
 import { NoItemsList } from './NoItemsList'
 
 export function AllTicketsList () {
-  return (
+  const empty = true
+
+  if (empty == true) {
+    return (
     <>
     <header>
       <div className='back-container'>
@@ -11,8 +14,14 @@ export function AllTicketsList () {
       </div>
       </header>
     <NoItemsList />
-    {/**
-    <section>
+    </>
+    )
+  }
+
+  else {
+    return (
+      <>
+        <section>
       <header>
       <div className='back-container'>
         <NavLink to='/'>Go back</NavLink>
@@ -50,7 +59,7 @@ export function AllTicketsList () {
         </div>
       </article>
     </section>
-    */}
-    </>
-  )
+      </>
+    )
+  }
 }
