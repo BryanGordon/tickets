@@ -1,7 +1,9 @@
 export function NoTickectInfo () {
   return (
-    <>
-      <h1>No ticket data available</h1>
-    </>
+    <section className='conditional-section home-card'>
+      <article className='invalid-data'>
+        <h4>No ticket data available</h4>
+      </article>
+    </section>
   )
 }
