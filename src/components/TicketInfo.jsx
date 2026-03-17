@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import "../styles/TicketInfo.css"
 import { NavLink } from 'react-router-dom'
+import { NoTickectInfo } from './NoTicketInfo'
 
 export function TicketInfo () {
   const [ticketData, SetTicketData] = useState("")
+  const empty = false
 
   const GenerateConcertTicket = async () => {
     const newTicket = await fetch("http://localhost:3000/concert-tickets", {
@@ -31,8 +33,35 @@ export function TicketInfo () {
 
     SetTicketData(newTicket)
   }
-  
-  return (
+
+  if (empty == true) {
+    return (
+      <>
+      <section>
+      <article className='container-tickets'>
+      <ul>
+      <li>
+        <button onClick={GenerateConcertTicket}>Concert</button>
+      </li>
+      <li>
+        <button onClick={GenerateMoviesTicket}>Movies</button>
+      </li>
+      <li>
+        <button onClick={GenerateTrainTicket}>Trains</button>
+      </li>
+    </ul>
+    </article>
+    <div className='list-tickets-link'>
+      <NavLink to='/tickets-list'>See all tickets.</NavLink>
+    </div>
+    </section>
+      <NoTickectInfo />
+      </>
+    )
+  }
+
+  else {
+      return (
     <>
     <section>
       <article className='container-tickets'>
@@ -69,4 +98,6 @@ export function TicketInfo () {
     </section>
     </>
   )
+  }
+
 }
