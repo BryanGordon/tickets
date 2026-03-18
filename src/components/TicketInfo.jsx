@@ -1,3 +1,4 @@
+// Importar libreria de qrcode
 import { useState } from 'react'
 import "../styles/TicketInfo.css"
 import { NavLink } from 'react-router-dom'
@@ -5,14 +6,14 @@ import { NoTickectInfo } from './NoTicketInfo'
 
 export function TicketInfo () {
   const [ticketData, SetTicketData] = useState("")
-  const empty = false
+  const [empty, setEmpty] = useState(true)
 
   const GenerateConcertTicket = async () => {
     const newTicket = await fetch("http://localhost:3000/concert-tickets", {
       method: "POST",
     })
     .then(res => res.json())
-    console.log(newTicket)
+    setEmpty(false)
     SetTicketData(newTicket)
   }
 
@@ -21,7 +22,7 @@ export function TicketInfo () {
       method: "POST",
     })
     .then(res => res.json())
-
+    setEmpty(false)
     SetTicketData(newTicket)
   }
 
@@ -30,7 +31,7 @@ export function TicketInfo () {
       method: "POST"
     })
     .then(res => res.json())
-
+    setEmpty(false)
     SetTicketData(newTicket)
   }
 
