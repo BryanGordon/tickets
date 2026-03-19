@@ -1,4 +1,4 @@
-// Importar libreria de qrcode
+import { toDataURL } from 'qrcode'
 import { useState } from 'react'
 import "../styles/TicketInfo.css"
 import { NavLink } from 'react-router-dom'
@@ -7,6 +7,7 @@ import { NoTickectInfo } from './NoTicketInfo'
 export function TicketInfo () {
   const [ticketData, SetTicketData] = useState("")
   const [empty, setEmpty] = useState(true)
+  const [qrImage, setQrImage] = useState("")
 
   const GenerateConcertTicket = async () => {
     const newTicket = await fetch("http://localhost:3000/concert-tickets", {
@@ -35,6 +36,11 @@ export function TicketInfo () {
     SetTicketData(newTicket)
   }
 
+  const GenerateQR = async () => {
+    const newQR = await toDataURL("www.google.com")
+    setQrImage(newQR)
+  }
+
   if (empty == true) {
     return (
       <>
@@ -50,10 +56,16 @@ export function TicketInfo () {
       <li>
         <button onClick={GenerateTrainTicket}>Trains</button>
       </li>
+      <li>
+        <button onClick={GenerateQR}>QR</button>
+      </li>
     </ul>
     </article>
     <div className='list-tickets-link'>
       <NavLink to='/tickets-list'>See all tickets.</NavLink>
+    </div>
+    <div>
+      <img src={qrImage} alt="QR" />
     </div>
     </section>
       <NoTickectInfo />
@@ -75,6 +87,9 @@ export function TicketInfo () {
       </li>
       <li>
         <button onClick={GenerateTrainTicket}>Trains</button>
+      </li>
+      <li>
+        <button onClick={GenerateQR}>QR</button>
       </li>
     </ul>
     </article>
