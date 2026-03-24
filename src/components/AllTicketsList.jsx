@@ -1,9 +1,32 @@
 import { NavLink } from 'react-router-dom'
 import '../styles/AllTicketsList.css'
 import { NoItemsList } from './NoItemsList'
+import { useState } from 'react'
+import { useEffect } from 'react'
 
 export function AllTicketsList () {
-  const empty = true
+  const [tickets, setTickets] = useState([])
+  const empty = false
+  /*
+  const getTickets = async () => {
+    const data = await fetch("http://localhost:3000/get-all-tickets")
+    .then(res => res.json)
+
+    setTickets(data)
+  }
+*/
+  useEffect(() => {
+    console.log("Execute")
+    const getTickets = async () => {
+    const data = await fetch("http://localhost:3000/get-all-tickets")
+    const algo = await data.json()
+
+    setTickets(algo)
+    }
+    getTickets()
+    console.log("dated")
+    console.log(tickets)
+  }, [])
 
   if (empty == true) {
     return (
@@ -28,6 +51,22 @@ export function AllTicketsList () {
       </div>
       </header>
       <article>
+        {
+          tickets.movie.map((ticket) => {
+            <div className='ticket-data-card'>
+          <div className='info-container'>
+            <span>Ticket type: {ticket.type}</span>
+            <span>Number: {ticket.number}</span>
+          </div>
+          <div>
+            <span className='validated'>{ticket.validated}</span>  
+          </div>
+        </div>
+          }
+          ) 
+
+        }
+        {/** 
         <div className='ticket-data-card'>
           <div className='info-container'>
             <span>Ticket type: Train</span>
@@ -57,6 +96,7 @@ export function AllTicketsList () {
             <span className='validated'>Validated</span>
           </div>
         </div>
+        */}
       </article>
     </section>
       </>
