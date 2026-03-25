@@ -44,3 +44,10 @@
   background-color: skyblue;
   color: black;
 }
+
+.not-validated {
+  padding: 7px 16px;
+  border-radius: 18px;
+  background-color: crimson;
+  color: black;
+}
