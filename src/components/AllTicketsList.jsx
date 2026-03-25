@@ -53,7 +53,7 @@ export function AllTicketsList () {
       </header>
       <article>
         {
-          tickets.movie.map((ticket) => {
+          tickets.map((ticket) => (
             <div className='ticket-data-card'>
           <div className='info-container'>
             <span>Ticket type: {ticket.type}</span>
