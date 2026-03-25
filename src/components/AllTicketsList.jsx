@@ -19,13 +19,14 @@ export function AllTicketsList () {
     console.log("Execute")
     const getTickets = async () => {
     const data = await fetch("http://localhost:3000/get-all-tickets")
-    const algo = await data.json()
+    const res = await data.json()
 
-    setTickets(algo)
+    const allTickets = [...(res.concert || []), ...(res.movie || []), ...(res.train || [])]
+
+    setTickets(allTickets)
     }
+    
     getTickets()
-    console.log("dated")
-    console.log(tickets)
   }, [])
 
   if (empty == true) {
