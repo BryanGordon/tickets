@@ -60,10 +60,10 @@ export function AllTicketsList () {
             <span>Number: {ticket.number}</span>
           </div>
           <div>
-            <span className='validated'>{ticket.validated}</span>  
+            <span className={ticket.validated ? "validated" : "not-validated"}>{ticket.validated ? 'Validated' : 'Not validated'}</span>  
           </div>
         </div>
-          }
+          )
           ) 
 
         }
