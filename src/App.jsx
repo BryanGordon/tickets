@@ -5,6 +5,7 @@ import { TicketInfo } from './components/TicketInfo'
 import './styles/App.css'
 import { AllTicketsList } from './components/AllTicketsList'
 import { Generator } from './components/Generator'
+import { ValidatePage } from './components/ValidatePage'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
     <Routes>
       <Route path='/' element={<Generator />}/>
       <Route path='/tickets-list' element={<AllTicketsList />}/>
+      <Route path='/validation/:id' element={<ValidatePage />} />
     </Routes>
     </Router>
     </main>
