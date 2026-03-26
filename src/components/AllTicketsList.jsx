@@ -6,7 +6,7 @@ import { useEffect } from 'react'
 
 export function AllTicketsList () {
   const [tickets, setTickets] = useState([])
-  const empty = false
+  // const empty = false
   /*
   const getTickets = async () => {
     const data = await fetch("http://localhost:3000/get-all-tickets")
@@ -29,7 +29,7 @@ export function AllTicketsList () {
     getTickets()
   }, [])
 
-  if (empty == true) {
+  if (tickets.length === 0) {
     return (
     <>
     <header>
@@ -54,7 +54,7 @@ export function AllTicketsList () {
       <article>
         {
           tickets.map((ticket) => (
-            <div className='ticket-data-card'>
+            <div className='ticket-data-card' key={ticket.number}>
           <div className='info-container'>
             <span>Ticket type: {ticket.type}</span>
             <span>Number: {ticket.number}</span>
