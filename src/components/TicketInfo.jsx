@@ -14,8 +14,11 @@ export function TicketInfo () {
       method: "POST",
     })
     .then(res => res.json())
-    setEmpty(false)
     SetTicketData(newTicket)
+    
+    const newQR = await toDataURL(`http://192.168.0.178:5173/validation/${newTicket.id}`)
+    setQrImage(newQR)
+    setEmpty(false)
   }
 
   const GenerateMoviesTicket = async () => {
@@ -23,8 +26,11 @@ export function TicketInfo () {
       method: "POST",
     })
     .then(res => res.json())
-    setEmpty(false)
     SetTicketData(newTicket)
+    
+    const newQR = await toDataURL(`http://192.168.0.178:5173/validation/${newTicket.id}`)
+    setQrImage(newQR)
+    setEmpty(false)
   }
 
   const GenerateTrainTicket = async () => {
@@ -32,14 +38,18 @@ export function TicketInfo () {
       method: "POST"
     })
     .then(res => res.json())
-    setEmpty(false)
     SetTicketData(newTicket)
+    
+    const newQR = await toDataURL(`http://192.168.0.178:5173/validation/${newTicket.id}`)
+    setQrImage(newQR)
+    setEmpty(false)
   }
-
+  /*
   const GenerateQR = async () => {
-    const newQR = await toDataURL("www.google.com")
+    const newQR = await toDataURL("http://192.168.0.178:5173/validation/1f128938-a2ee-6839-b873-ef3104ca9ed9")
     setQrImage(newQR)
   }
+  */
 
   if (empty == true) {
     return (
@@ -56,9 +66,11 @@ export function TicketInfo () {
       <li>
         <button onClick={GenerateTrainTicket}>Trains</button>
       </li>
+      {/** 
       <li>
         <button onClick={GenerateQR}>QR</button>
       </li>
+      */}
     </ul>
     </article>
     <div className='list-tickets-link'>
@@ -88,13 +100,18 @@ export function TicketInfo () {
       <li>
         <button onClick={GenerateTrainTicket}>Trains</button>
       </li>
+      {/** 
       <li>
         <button onClick={GenerateQR}>QR</button>
       </li>
+      */}
     </ul>
     </article>
     <div className='list-tickets-link'>
       <NavLink to='/tickets-list'>See all tickets.</NavLink>
+    </div>
+    <div>
+      <img src={qrImage} alt="QR" />
     </div>
     </section>
     <section>
