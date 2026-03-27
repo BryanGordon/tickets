@@ -76,9 +76,6 @@ export function TicketInfo () {
     <div className='list-tickets-link'>
       <NavLink to='/tickets-list'>See all tickets.</NavLink>
     </div>
-    <div>
-      <img src={qrImage} alt="QR" />
-    </div>
     </section>
       <NoTickectInfo />
       </>
@@ -110,9 +107,6 @@ export function TicketInfo () {
     <div className='list-tickets-link'>
       <NavLink to='/tickets-list'>See all tickets.</NavLink>
     </div>
-    <div>
-      <img src={qrImage} alt="QR" />
-    </div>
     </section>
     <section>
       <article className='ticket-card'>
@@ -121,7 +115,7 @@ export function TicketInfo () {
           <span>{ticketData.type} ticket</span>
         </div>
         <div className='img-container'>
-          <img src="" alt="ticket image" />
+          <img src={qrImage} alt="QR image" />
         </div>
         <div className='data-format'>
           <strong>Number:</strong>
