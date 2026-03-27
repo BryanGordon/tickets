@@ -18,8 +18,11 @@ h2 {
 }
 
 .invalid-data {
+  width: 55%;
+  margin: 0 auto;
   border-radius: 10px;
-  background-color: darkviolet;
+  background-color: #232323;
   padding: 40px;
   text-align: center;
+  box-shadow: 0px 0px 9px 3px #be66c4e1;
 }
