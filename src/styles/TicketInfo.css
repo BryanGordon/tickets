@@ -1,5 +1,7 @@
 .ticket-card {
   background-color: #363333;
+  width: 55%;
+  margin: 0 auto;
   padding: 35px;
   border-radius: 12px;
   margin-bottom: 65px;
@@ -7,14 +9,15 @@
 }
 
 .img-container {
-  width: 100%;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
 
   & img {
-    width: 350px;
-    height: 210px;
-    min-width: 260px;
-    min-height: 150px;
+    width: 280px;
+    height: 220px;
+    min-width: 185px;
+    min-height: 110px;
     aspect-ratio: 3/4;
     object-fit: contain;
   }
@@ -22,11 +25,11 @@
 
 .data-format {
   display: flex;
-  flex-wrap: wrap;
   gap: 10px;
   margin-top: 35px;
   width: 60%;
   margin-inline: auto;
+  justify-content: center;
 
   & span {
     font-size: 20px;
@@ -76,13 +79,19 @@ ul {
 li {
   list-style: none;
 
+  & button:hover {
+    box-shadow: 0px 0px 9px 3px #be66c4e1;
+    scale: 1.03;
+  }
+
   & button {
-    color: whitesmoke;
-    background-color: darkviolet;
+    color: currentColor;
+    background-color: #4A1942;
     border-radius: 6px;
     padding: 12px 17px;
     border: none;
     cursor: pointer;
+    transition: box-shadow ease-in-out 0.2s;
   }
 }
 
