@@ -1,12 +1,12 @@
 .ticket-data-card {
   display: flex;
   flex-direction: column;
-  gap: 35px;
+  gap: 55px;
   align-items: center;
   padding: 20px;
-  margin-block: 25px;
+  margin-block: 45px;
   border-radius: 9px;
-  background-color: #6b069eec;
+  background-color: #4A1942;
   box-shadow: 0px 0px 9px 3px #be66c4e1;
 }
 
@@ -34,20 +34,20 @@
   & span {
     font-size: 19px;
     font-weight: 600;
-    color: black;
+    color: currentColor;
   }
 }
 
 .validated {
   padding: 7px 16px;
   border-radius: 18px;
-  background-color: skyblue;
-  color: black;
+  background-color: #B8BEC7;
+  color: #050505;
 }
 
 .not-validated {
   padding: 7px 16px;
   border-radius: 18px;
-  background-color: crimson;
-  color: black;
+  background-color: #D1495B;
+  color: #050505;
 }
