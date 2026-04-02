@@ -1,6 +1,7 @@
-import { toDataURL } from 'qrcode'
-import { useState } from 'react'
 import "../styles/TicketInfo.css"
+
+import { useState } from 'react'
+import { toDataURL } from 'qrcode'
 import { NavLink } from 'react-router-dom'
 import { NoTickectInfo } from './NoTicketInfo'
 
@@ -44,87 +45,71 @@ export function TicketInfo () {
     setQrImage(newQR)
     setEmpty(false)
   }
-  /*
-  const GenerateQR = async () => {
-    const newQR = await toDataURL("http://192.168.0.178:5173/validation/1f128938-a2ee-6839-b873-ef3104ca9ed9")
-    setQrImage(newQR)
-  }
-  */
 
   if (empty == true) {
     return (
       <>
-      <section>
-      <article className='container-tickets'>
-      <ul>
-      <li>
-        <button onClick={GenerateConcertTicket}>Concert</button>
-      </li>
-      <li>
-        <button onClick={GenerateMoviesTicket}>Movies</button>
-      </li>
-      <li>
-        <button onClick={GenerateTrainTicket}>Trains</button>
-      </li>
-      {/** 
-      <li>
-        <button onClick={GenerateQR}>QR</button>
-      </li>
-      */}
-    </ul>
-    </article>
-    <div className='list-tickets-link'>
-      <NavLink to='/tickets-list'>See all tickets.</NavLink>
-    </div>
-    </section>
-      <NoTickectInfo />
+        <section>
+          <article className='container-tickets'>
+            <ul>
+              <li>
+                <button onClick={GenerateConcertTicket}>Concert</button>
+              </li>
+              <li>
+                <button onClick={GenerateMoviesTicket}>Movies</button>
+              </li>
+              <li>
+                <button onClick={GenerateTrainTicket}>Trains</button>
+              </li>
+            </ul>
+          </article>
+          <div className='list-tickets-link'>
+            <NavLink to='/tickets-list'>See all tickets.</NavLink>
+          </div>
+        </section>
+        <NoTickectInfo />
       </>
     )
   }
 
   else {
-      return (
-    <>
-    <section>
-      <article className='container-tickets'>
-      <ul>
-      <li>
-        <button onClick={GenerateConcertTicket}>Concert</button>
-      </li>
-      <li>
-        <button onClick={GenerateMoviesTicket}>Movies</button>
-      </li>
-      <li>
-        <button onClick={GenerateTrainTicket}>Trains</button>
-      </li>
-      {/** 
-      <li>
-        <button onClick={GenerateQR}>QR</button>
-      </li>
-      */}
-    </ul>
-    </article>
-    <div className='list-tickets-link'>
-      <NavLink to='/tickets-list'>See all tickets.</NavLink>
-    </div>
-    </section>
-    <section>
-      <article className='ticket-card'>
-        <h3>Ticket information</h3>
-        <div className='data-format'>
-          <span>{ticketData.type} ticket</span>
-        </div>
-        <div className='img-container'>
-          <img src={qrImage} alt="QR image" />
-        </div>
-        <div className='data-format'>
-          <strong>Number:</strong>
-          <span>{ticketData.number}</span>
-        </div>
-      </article>
-    </section>
-    </>
-  )
+    return (
+      <>
+        <section>
+          <article className='container-tickets'>
+            <ul>
+              <li>
+                <button onClick={GenerateConcertTicket}>Concert</button>
+              </li>
+              <li>
+                <button onClick={GenerateMoviesTicket}>Movies</button>
+              </li>
+              <li>
+                <button onClick={GenerateTrainTicket}>Trains</button>
+              </li>
+            </ul>
+          </article>
+          <div className='list-tickets-link'>
+            <NavLink to='/tickets-list'>See all tickets.</NavLink>
+          </div>
+        </section>
+        <section>
+          <article className='ticket-card'>
+            <h3>Ticket information</h3>
+            <div className='data-format'>
+              <span>{ticketData.type} ticket</span>
+            </div>
+            <div className='img-container'>
+              <img src={qrImage} alt="QR image" />
+            </div>
+            <div className='data-format'>
+              <strong>Number:</strong>
+              <span>{ticketData.number}</span>
+            </div>
+          </article>
+        </section>
+      </>
+    )
   }
 
 }
