@@ -17,20 +17,11 @@ export function ValidatePage () {
       }
     }
 
-    getValidation()
-    console.log(id)
-    
+    getValidation()    
   }, [])
 
   if (validate) {
-    return (
-      <>
-      {
-        console.log(id)
-      }
-    <h2>Ticket validado correctamente.</h2>
-    </>
-  )
+    return <h2>Ticket validado correctamente.</h2>
   }
 
   else return <h2>El ticket no se ha podido validar.</h2> 
