@@ -7,19 +7,12 @@ import { NoItemsList } from './NoItemsList'
 
 export function AllTicketsList () {
   const [tickets, setTickets] = useState([])
-  // const empty = false
-  /*
-  const getTickets = async () => {
-    const data = await fetch("http://localhost:3000/get-all-tickets")
-    .then(res => res.json)
+ const host = import.meta.env.VITE.SERVER_BACK
 
-    setTickets(data)
-  }
-*/
   useEffect(() => {
     console.log("Execute")
     const getTickets = async () => {
-    const data = await fetch("http://localhost:3000/get-all-tickets")
+    const data = await fetch(`${host}/get-all-tickets`)
     const res = await data.json()
 
     const allTickets = [...(res.concert || []), ...(res.movie || []), ...(res.train || [])]
