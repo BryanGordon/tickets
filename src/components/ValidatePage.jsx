@@ -3,12 +3,13 @@ import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 export function ValidatePage () {
+  const host = import.meta.env.VITE_SERVER_BACK
   const [validate, setValidate] = useState(false)
   const { id } = useParams()
 
   useEffect(() => {
     const getValidation = async () => {
-      const res = await fetch(`http://192.168.0.178:3000/validation/${id}`, {
+      const res = await fetch(`${host}/validation/${id}`, {
         method: "PATCH"
       })
 
@@ -18,7 +19,7 @@ export function ValidatePage () {
     }
 
     getValidation()    
-  }, [])
+  }, [id])
 
   if (validate) {
     return <h2>Ticket validado correctamente.</h2>
