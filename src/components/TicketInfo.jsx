@@ -6,42 +6,44 @@ import { NavLink } from 'react-router-dom'
 import { NoTickectInfo } from './NoTicketInfo'
 
 export function TicketInfo () {
+  const hostBack = import.meta.env.VITE_SERVER_BACK
+  const host = import.meta.env.VITE_SERVER_HOST
   const [ticketData, SetTicketData] = useState("")
   const [empty, setEmpty] = useState(true)
   const [qrImage, setQrImage] = useState("")
 
   const GenerateConcertTicket = async () => {
-    const newTicket = await fetch("http://localhost:3000/concert-tickets", {
+    const newTicket = await fetch(`${hostBack}/concert-tickets`, {
       method: "POST",
     })
     .then(res => res.json())
     SetTicketData(newTicket)
     
-    const newQR = await toDataURL(`http://192.168.0.178:5173/validation/${newTicket.id}`)
+    const newQR = await toDataURL(`${host}/validation/${newTicket.id}`)
     setQrImage(newQR)
     setEmpty(false)
   }
 
   const GenerateMoviesTicket = async () => {
-    const newTicket = await fetch('http://localhost:3000/movies-tickets', {
+    const newTicket = await fetch(`${hostBack}/movies-tickets`, {
       method: "POST",
     })
     .then(res => res.json())
     SetTicketData(newTicket)
     
-    const newQR = await toDataURL(`http://192.168.0.178:5173/validation/${newTicket.id}`)
+    const newQR = await toDataURL(`${host}/validation/${newTicket.id}`)
     setQrImage(newQR)
     setEmpty(false)
   }
 
   const GenerateTrainTicket = async () => {
-    const newTicket = await fetch("http://localhost:3000/train-tickets", {
+    const newTicket = await fetch(`${hostBack}/train-tickets`, {
       method: "POST"
     })
     .then(res => res.json())
     SetTicketData(newTicket)
     
-    const newQR = await toDataURL(`http://192.168.0.178:5173/validation/${newTicket.id}`)
+    const newQR = await toDataURL(`${host}/validation/${newTicket.id}`)
     setQrImage(newQR)
     setEmpty(false)
   }
