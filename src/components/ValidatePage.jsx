@@ -9,7 +9,7 @@ export function ValidatePage () {
 
   useEffect(() => {
     const getValidation = async () => {
-      const res = await fetch(`${host}/validation/${id}`, {
+      const res = await fetch(`${host}validation/${id}`, {
         method: "PATCH"
       })
 
