@@ -7,7 +7,7 @@ import { NoItemsList } from './NoItemsList'
 
 export function AllTicketsList () {
   const [tickets, setTickets] = useState([])
- const host = import.meta.env.VITE.SERVER_BACK
+ const host = import.meta.env.VITE_SERVER_BACK
 
   useEffect(() => {
     console.log("Execute")
