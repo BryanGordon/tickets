@@ -19,7 +19,7 @@ export function TicketInfo () {
     .then(res => res.json())
     SetTicketData(newTicket)
     
-    const newQR = await toDataURL(`${host}/validation/${newTicket.id}`)
+    const newQR = await toDataURL(`${host}validation/${newTicket.id}`)
     setQrImage(newQR)
     setEmpty(false)
   }
@@ -31,7 +31,7 @@ export function TicketInfo () {
     .then(res => res.json())
     SetTicketData(newTicket)
     
-    const newQR = await toDataURL(`${host}/validation/${newTicket.id}`)
+    const newQR = await toDataURL(`${host}validation/${newTicket.id}`)
     setQrImage(newQR)
     setEmpty(false)
   }
@@ -43,7 +43,7 @@ export function TicketInfo () {
     .then(res => res.json())
     SetTicketData(newTicket)
     
-    const newQR = await toDataURL(`${host}/validation/${newTicket.id}`)
+    const newQR = await toDataURL(`${host}validation/${newTicket.id}`)
     setQrImage(newQR)
     setEmpty(false)
   }
